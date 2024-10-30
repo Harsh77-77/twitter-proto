@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class='text-slate-400 text-center flex flex-col items-center justify-center'>
+<h2 class='text-3xl mt-10 font-bold'>Register Form</h2>
+<form  method="post" class='text-start mt-10 space-y-2'>
+    {% csrf_token %}
+   {{form.as_p}}
+    <button class="btn btn-primary w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded transition duration-200">Register</button>
+</form>
+</div>
+{% endblock %}

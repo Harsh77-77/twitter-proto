@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block title %}
+tweet
+{% endblock  %}
+
+
+
+{% block content %}
+
+    {% comment %} <h1 class='text-center text-slate-200 m-4'>Are tou sure you want to delete the Tweet</h1>
+
+    <form method="post" class='text-slate-200'>
+        {% csrf_token %}
+        <button class="btn btn-danger">Delete</button>
+        <a class="btn btn-success" href="{% url 'tweet_list' %}">Cancel</a>
+    </form> {% endcomment %}
+
+
+
+    <h1 class='text-center text-2xl text-slate-200 mt-36 m-10'>Are you sure you want to delete the Tweet?</h1>
+
+<form method="post" class='text-slate-200 text-center'>
+    {% csrf_token %}
+    <button class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Delete</button>
+    <a class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded ml-2" href="{% url 'tweet_list' %}">Cancel</a>
+</form>
+
+
+{% endblock %}
